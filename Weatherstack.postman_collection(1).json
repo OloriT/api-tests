@@ -68,9 +68,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/current?query=New Delhi",
+							"raw": "https://api.weatherstack.com/current?query=New Delhi",
+							"protocol": "https",
 							"host": [
-								"{{baseUrl}}"
+								"api",
+								"weatherstack",
+								"com"
 							],
 							"path": [
 								"current"
@@ -136,9 +139,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/current?query=London;Singapur;Shanghai",
+							"raw": "https://api.weatherstack.com/current?query=London;Singapur;Shanghai",
+							"protocol": "https",
 							"host": [
-								"{{baseUrl}}"
+								"api",
+								"weatherstack",
+								"com"
 							],
 							"path": [
 								"current"
@@ -205,9 +211,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/current?query=40.7831,-73.9712",
+							"raw": "https://api.weatherstack.com/current?query=40.7831,-73.9712",
+							"protocol": "https",
 							"host": [
-								"{{baseUrl}}"
+								"api",
+								"weatherstack",
+								"com"
 							],
 							"path": [
 								"current"
@@ -222,102 +231,7 @@
 						},
 						"description": "Aside from simply passing the name of a city, there are multiple other ways of passing a location to the API:\n\n| Definition | Example | Description |\n| --- | --- | --- |\n| Location Name | `query = New York` | The standard way of passing a location name to the API. |\n| UK/Canada/US ZIP Code | `query = 99501` | Pass a UK/Canada/US ZIP code to the API and auto-detect the associated location. |\n| Coordinates (Lat/Lon) | `query = 40.7831,-73.9712` | Pass latitude and longitude coordinates to the API and auto-detect the associated location. |\n| IP Address | `query = 153.65.8.20` | Pass an IP address to the API and auto-detect the associated location. |\n| IP Address (Auto-Fetch) | `query = fetch:ip` | Pass `fetch:ip` to the API in order to auto-detect the requester IP address and location. |"
 					},
-					"response": [
-						{
-							"name": "200 OK – Location Identifiers",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://api.weatherstack.com/current?access_key={PASTE_YOUR_API_KEY_HERE}&query=40.7831,-73.9712",
-									"protocol": "https",
-									"host": [
-										"api",
-										"weatherstack",
-										"com"
-									],
-									"path": [
-										"current"
-									],
-									"query": [
-										{
-											"key": "access_key",
-											"value": "{PASTE_YOUR_API_KEY_HERE}",
-											"description": "[Required] Specify your API access key, available in your account dashboard.\n"
-										},
-										{
-											"key": "query",
-											"value": "40.7831,-73.9712",
-											"description": "Pass latitude and longitude coordinates to the API and auto-detect the associated location.\n"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Mon, 18 Mar 2024 13:00:35 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; Charset=UTF-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "x-apilayer-transaction-id",
-									"value": "9678357b-46f9-472b-96ee-ec65a6c1ed21"
-								},
-								{
-									"key": "access-control-allow-methods",
-									"value": "GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS"
-								},
-								{
-									"key": "access-control-allow-origin",
-									"value": "*"
-								},
-								{
-									"key": "x-request-time",
-									"value": "0.124"
-								},
-								{
-									"key": "CF-Cache-Status",
-									"value": "DYNAMIC"
-								},
-								{
-									"key": "Report-To",
-									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=8fZ2Yu1uWlHcoMH96zmD82vyt11GCaaUWcY8wZ2Q22PnQjxB%2BFHsk%2Fu%2FyyjcJ8NipR%2FsgvKXPp6BGd4L4ERBPcr8MsfFolBuaZCo6H0ropgCXpbQOzalZkxv0avFfDxrbBhul%2FRT\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
-								},
-								{
-									"key": "NEL",
-									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "8665680f89afa739-IXC"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "br"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"request\": {\n        \"type\": \"LatLon\",\n        \"query\": \"Lat 40.78 and Lon -73.97\",\n        \"language\": \"en\",\n        \"unit\": \"m\"\n    },\n    \"location\": {\n        \"name\": \"Guttenberg\",\n        \"country\": \"United States of America\",\n        \"region\": \"New Jersey\",\n        \"lat\": \"40.792\",\n        \"lon\": \"-74.004\",\n        \"timezone_id\": \"America/New_York\",\n        \"localtime\": \"2024-03-18 08:59\",\n        \"localtime_epoch\": 1710752340,\n        \"utc_offset\": \"-4.0\"\n    },\n    \"current\": {\n        \"observation_time\": \"12:59 PM\",\n        \"temperature\": 6,\n        \"weather_code\": 113,\n        \"weather_icons\": [\n            \"https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png\"\n        ],\n        \"weather_descriptions\": [\n            \"Sunny\"\n        ],\n        \"wind_speed\": 4,\n        \"wind_degree\": 297,\n        \"wind_dir\": \"WNW\",\n        \"pressure\": 1008,\n        \"precip\": 0,\n        \"humidity\": 45,\n        \"cloudcover\": 0,\n        \"feelslike\": 3,\n        \"uv_index\": 2,\n        \"visibility\": 16,\n        \"is_day\": \"yes\"\n    }\n}"
-						}
-					]
+					"response": []
 				}
 			],
 			"description": "Current endpoint let you fetch the weather stats of the metioned location in the `query` parameter."
@@ -357,9 +271,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/historical?query=New York&historical_date=2015-01-21&hourly=1",
+							"raw": "https://api.weatherstack.com/historical?query=New York&historical_date=2015-01-21&hourly=1",
+							"protocol": "https",
 							"host": [
-								"{{baseUrl}}"
+								"api",
+								"weatherstack",
+								"com"
 							],
 							"path": [
 								"historical"
@@ -427,9 +344,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/historical?query=New York&historical_date_start=2015-01-21&historical_date_end=2015-01-25",
+							"raw": "https://api.weatherstack.com/historical?query=New York&historical_date_start=2015-01-21&historical_date_end=2015-01-25",
+							"protocol": "https",
 							"host": [
-								"{{baseUrl}}"
+								"api",
+								"weatherstack",
+								"com"
 							],
 							"path": [
 								"historical"
@@ -504,9 +424,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/forecast?query=New York&forecast_days=7",
+							"raw": "https://api.weatherstack.com/forecast?query=New York&forecast_days=7",
+							"protocol": "https",
 							"host": [
-								"{{baseUrl}}"
+								"api",
+								"weatherstack",
+								"com"
 							],
 							"path": [
 								"forecast"
@@ -561,9 +484,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/autocomplete?query=london",
+							"raw": "https://api.weatherstack.com/autocomplete?query=london",
+							"protocol": "https",
 							"host": [
-								"{{baseUrl}}"
+								"api",
+								"weatherstack",
+								"com"
 							],
 							"path": [
 								"autocomplete"
@@ -633,8 +559,9 @@
 		},
 		{
 			"key": "baseUrl",
-			"value": "---",
-			"type": "string"
+			"value": "https://api.weatherstack.com",
+			"type": "string",
+			"disabled": true
 		}
 	]
 }
