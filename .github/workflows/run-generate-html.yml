@@ -25,13 +25,13 @@ jobs:
         run: npm install -g newman newman-reporter-htmlextra
 
       - name: Create Results Directory
-        run: mkdir -p testResults
+        run: mkdir -p results
 
       - name: Run Newman Tests
-        run: newman run "Weatherstack.postman_collection.json" -r htmlextra --reporter-htmlextra-export newman/htmlreport.html
+        run: newman run "Weatherstack.postman_collection.json" -r htmlextra --reporter-htmlextra-export results/htmlreport.html
 
       - name: Upload HTML Report
         uses: actions/upload-artifact@v3
         with:
           name: postman-report
-          path: testResults/htmlreport.html
+          path: results/htmlreport.html
