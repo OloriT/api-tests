@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
           node-version: '16'  # or your preferred version of Node.js
 
@@ -28,7 +28,7 @@ jobs:
         run: mkdir -p results
 
       - name: Run Newman Tests
-        run: newman run "Weatherstack.postman_collection.json" -r htmlextra --reporter-htmlextra-export results/htmlreport.html
+        run: newman run "Weatherstack.postman_collection(1).json" -r htmlextra --reporter-htmlextra-export results/htmlreport.html --verbose
 
       - name: Upload HTML Report
         uses: actions/upload-artifact@v3
