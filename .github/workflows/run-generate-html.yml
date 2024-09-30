@@ -28,7 +28,7 @@ jobs:
         run: mkdir -p results
 
       - name: Run Newman Tests
-        run: newman run "Weatherstack.postman_collection(1).json" -r htmlextra --reporter-htmlextra-export results/htmlreport.html --verbose
+        run: newman run "Weatherstack.postman_collection (1).json" -r htmlextra --reporter-htmlextra-export results/htmlreport.html --verbose
 
       - name: Upload HTML Report
         uses: actions/upload-artifact@v3
